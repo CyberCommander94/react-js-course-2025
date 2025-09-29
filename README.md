@@ -1,1 +1,1 @@
-# react-js-course-2025
+# React JS course 2025
