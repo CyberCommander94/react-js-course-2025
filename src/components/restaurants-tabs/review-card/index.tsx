@@ -25,6 +25,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacing(1)};
+  border-left: 4px solid ${(props) => props.theme.colors.roseBrownMedium};
   border-right: 4px solid ${(props) => props.theme.colors.roseBrownMedium};
   border-bottom: 1px solid ${(props) => props.theme.colors.roseBrownMedium};
 `;

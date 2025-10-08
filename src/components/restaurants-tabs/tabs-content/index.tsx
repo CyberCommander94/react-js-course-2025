@@ -14,34 +14,34 @@ export const TabsContent: FC<Props> = ({ restaurant }) => {
     <div>
       <RestaurantName>{restaurant.name}</RestaurantName>
       <SectionTitle>Меню</SectionTitle>
-      {restaurant?.menu ? (
+      {restaurant?.menu?.length ? (
         <RestaurantDataGrid>
           {restaurant.menu.map((menuItem) => (
             <MenuItemCard menuItem={menuItem} key={menuItem.id} />
           ))}
         </RestaurantDataGrid>
       ) : (
-        'нет блюд в меню'
+        <NoContentMessage>Список блюд в меню пуст</NoContentMessage>
       )}
       <SectionTitle>Отзывы</SectionTitle>
-      {restaurant?.reviews ? (
+      {restaurant?.reviews?.length ? (
         <RestaurantDataGrid>
           {restaurant.reviews.map((review) => (
             <ReviewCard review={review} key={review.id} />
           ))}
         </RestaurantDataGrid>
       ) : (
-        'нет отзывов'
+        <NoContentMessage>Список отзывов пуст</NoContentMessage>
       )}
     </div>
   );
 };
 
-const RestaurantName = styled.h1`
+const RestaurantName = styled.h2`
   margin: ${(props) => props.theme.spacing(5)} 0;
   font-weight: 800;
   font-size: 1.5rem;
-  color: ${(props) => props.theme.colors.roseBrownDarker};
+  color: ${(props) => props.theme.colors.roseBrownMedium};
   padding: ${(props) => props.theme.spacing(4)} ${(props) => props.theme.spacing(2)}
     ${(props) => props.theme.spacing(4)} ${(props) => props.theme.spacing(4)};
   border-top: 1px solid ${(props) => props.theme.colors.roseBrownMedium};
@@ -56,4 +56,11 @@ const SectionTitle = styled.h3`
   color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spacing(4)} ${(props) => props.theme.spacing(2)}
     ${(props) => props.theme.spacing(4)} ${(props) => props.theme.spacing(4)};
+`;
+
+const NoContentMessage = styled.p`
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  margin: ${(props) => props.theme.spacing(10)} 0;
 `;

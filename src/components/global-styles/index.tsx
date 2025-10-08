@@ -9,6 +9,7 @@ export const GlobalStyles = () => {
       styles={css`
         html {
           overflow-x: hidden;
+          height: 100%;
         }
 
         body {
@@ -17,15 +18,26 @@ export const GlobalStyles = () => {
           font-size: 14px;
           line-height: 1.1;
           color: ${theme.colors.coolGrayDeep};
-          min-width: 100vw;
-          min-height: 100vh;
+          height: 100%;
+          width: 100%;
           position: relative;
+        }
+
+        body::before {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
           background: linear-gradient(
             to bottom right,
             ${theme.colors.roseBrownLightest},
             ${theme.colors.coolGrayLightest}
           );
           background-repeat: no-repeat;
+          background-size: cover;
         }
 
         #root {

@@ -40,7 +40,7 @@ const Logo = styled.div`
     to right,
     ${(props) => props.theme.colors.goldenBrownMedium},
     ${(props) => props.theme.colors.roseBrownDark},
-    ${(props) => props.theme.colors.goldenBrownDark}
+    ${(props) => props.theme.colors.goldenBrownDeep}
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: ${(props) => props.theme.colors.transparent};

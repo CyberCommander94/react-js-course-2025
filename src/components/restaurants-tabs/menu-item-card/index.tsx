@@ -33,6 +33,7 @@ export const MenuItemCard: FC<Props> = ({ menuItem }) => {
 
 const CardWrapper = styled.div`
   width: 100%;
+  border-left: 4px solid ${(props) => props.theme.colors.roseBrownMedium};
   border-right: 4px solid ${(props) => props.theme.colors.roseBrownMedium};
   border-bottom: 1px solid ${(props) => props.theme.colors.roseBrownMedium};
   padding: ${(props) => props.theme.spacing(4)};

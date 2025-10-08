@@ -19,5 +19,5 @@ const LayoutContainer = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr 50px;
+  grid-template-rows: auto 1fr auto;
 `;

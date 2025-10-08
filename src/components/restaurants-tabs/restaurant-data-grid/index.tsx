@@ -10,5 +10,5 @@ const CardsGrid = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  gap: ${(props) => props.theme.spacing(4)};
+  gap: ${(props) => props.theme.spacing(2)};
 `;
