@@ -1,18 +1,18 @@
 export interface IRestaurant {
   id: string;
   name: string;
-  menu: MenuItem[];
-  reviews: ReviewsItem[];
+  menu: IMenuItem[];
+  reviews: IReviewsItem[];
 };
 
-export type MenuItem = {
+export interface IMenuItem {
   id: string;
   name: string;
   price: string | number;
   ingredients: string[];
 };
 
-export type ReviewsItem = {
+export interface IReviewsItem {
   id: string;
   user: string;
   text: string;

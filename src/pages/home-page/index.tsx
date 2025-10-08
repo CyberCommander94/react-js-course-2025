@@ -1,20 +1,28 @@
 import styled from '@emotion/styled';
+import { restaurants } from '@/db/index'
+import { RestaurantsTabs } from '@/components/restaurants-tabs';
+import type { FC } from 'react';
 
-const HomePage = () => {
+export const HomePage: FC = () => {
   return (
     <PageContainer>
-      Home page
+      <PageContent>
+        <RestaurantsTabs restaurants={restaurants} />
+      </PageContent>
     </PageContainer>
   )
 }
-
-export default HomePage;
 
 const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+`;
+
+const PageContent = styled.div`
+  width: 100%;
+  padding: ${props => props.theme.spacing(2)} ${props => props.theme.spacing(7)};
+  max-width: 1500px;
+  box-sizing: border-box;
 `;
