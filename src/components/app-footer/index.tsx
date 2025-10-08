@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import type { FC } from "react";
+import type { FC } from 'react';
 
 const currentYear = new Date().getFullYear();
 
@@ -8,16 +8,12 @@ export const AppFooter: FC = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <Logo>
-          CityRestaurants
-        </Logo>
-        <Copyright>
-          © {currentYear}, CityRestaurants, All right reserved.
-        </Copyright>
+        <Logo>CityRestaurants</Logo>
+        <Copyright>© {currentYear}, CityRestaurants, All right reserved.</Copyright>
       </FooterContent>
     </FooterContainer>
   );
-}
+};
 
 const FooterContainer = styled.footer`
   width: 100%;
@@ -27,7 +23,7 @@ const FooterContainer = styled.footer`
 
 const FooterContent = styled.div`
   width: 100%;
-  padding: ${props => props.theme.spacing(4)} ${props => props.theme.spacing(7)};
+  padding: ${(props) => props.theme.spacing(4)} ${(props) => props.theme.spacing(7)};
   max-width: 1500px;
   box-sizing: border-box;
   display: flex;
@@ -42,12 +38,12 @@ const Logo = styled.div`
   letter-spacing: -1px;
   background: linear-gradient(
     to right,
-    ${props => props.theme.colors.goldenBrownMedium},
-    ${props => props.theme.colors.roseBrownDark},
-    ${props => props.theme.colors.goldenBrownDark}
+    ${(props) => props.theme.colors.goldenBrownMedium},
+    ${(props) => props.theme.colors.roseBrownDark},
+    ${(props) => props.theme.colors.goldenBrownDark}
   );
   -webkit-background-clip: text;
-  -webkit-text-fill-color: ${props => props.theme.colors.transparent};
+  -webkit-text-fill-color: ${(props) => props.theme.colors.transparent};
   text-transform: uppercase;
   user-select: none;
 `;

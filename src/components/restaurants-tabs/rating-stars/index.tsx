@@ -13,11 +13,7 @@ export const RatingStars: FC<Props> = ({ rating = 0, size = 20 }) => {
   return (
     <StarsWrapper>
       {stars.map((filled, index) =>
-        filled ? (
-          <FilledStar key={index} size={size} />
-        ) : (
-          <EmptyStar key={index} size={size} />
-        )
+        filled ? <FilledStar key={index} size={size} /> : <EmptyStar key={index} size={size} />,
       )}
     </StarsWrapper>
   );

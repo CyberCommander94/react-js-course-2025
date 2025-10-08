@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import type { FC } from "react";
+import type { FC } from 'react';
 
 export const AppHeader: FC = () => {
   return (
@@ -10,7 +10,7 @@ export const AppHeader: FC = () => {
       </HeaderContent>
     </HeaderContainer>
   );
-}
+};
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -20,7 +20,7 @@ const HeaderContainer = styled.header`
 
 const HeaderContent = styled.div`
   width: 100%;
-  padding: ${props => props.theme.spacing(7)};
+  padding: ${(props) => props.theme.spacing(7)};
   max-width: 1500px;
   box-sizing: border-box;
   display: flex;
@@ -35,12 +35,12 @@ const Logo = styled.div`
   letter-spacing: -1px;
   background: linear-gradient(
     to right,
-    ${props => props.theme.colors.goldenBrownMedium},
-    ${props => props.theme.colors.roseBrownDark},
-    ${props => props.theme.colors.goldenBrownDeep}
+    ${(props) => props.theme.colors.goldenBrownMedium},
+    ${(props) => props.theme.colors.roseBrownDark},
+    ${(props) => props.theme.colors.goldenBrownDeep}
   );
   -webkit-background-clip: text;
-  -webkit-text-fill-color: ${props => props.theme.colors.transparent};
+  -webkit-text-fill-color: ${(props) => props.theme.colors.transparent};
   text-transform: uppercase;
   user-select: none;
 `;

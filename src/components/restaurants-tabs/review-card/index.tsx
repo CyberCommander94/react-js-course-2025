@@ -5,7 +5,7 @@ import { RatingStars } from '../rating-stars';
 
 type Props = {
   review: IReviewsItem;
-}
+};
 
 export const ReviewCard: FC<Props> = ({ review }) => {
   return (
@@ -21,10 +21,10 @@ export const ReviewCard: FC<Props> = ({ review }) => {
 
 const CardWrapper = styled.div`
   width: 100%;
-  padding: ${props => props.theme.spacing(4)};
+  padding: ${(props) => props.theme.spacing(4)};
   display: flex;
   flex-direction: column;
-  gap: ${props => props.theme.spacing(1)};
+  gap: ${(props) => props.theme.spacing(1)};
   border-right: 4px solid ${(props) => props.theme.colors.roseBrownMedium};
   border-bottom: 1px solid ${(props) => props.theme.colors.roseBrownMedium};
 `;
@@ -34,7 +34,7 @@ const CardHeader = styled.div`
   display: flex;
   align-items: center;
   font-weight: 300;
-  gap: ${props => props.theme.spacing(3)};
+  gap: ${(props) => props.theme.spacing(3)};
 `;
 
 const CardTitle = styled.p`

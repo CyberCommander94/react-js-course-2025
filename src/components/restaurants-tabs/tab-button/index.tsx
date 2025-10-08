@@ -6,7 +6,7 @@ type Props = {
   restaurant: IRestaurant;
   isActive: boolean;
   onClick: (id: string) => void;
-}
+};
 
 export const TabButton: FC<Props> = ({ restaurant, isActive, onClick }) => {
   const { name, id } = restaurant;
@@ -15,17 +15,18 @@ export const TabButton: FC<Props> = ({ restaurant, isActive, onClick }) => {
       {name}
     </ButtonElement>
   );
-}
+};
 
 const ButtonElement = styled.button<{ isActive: boolean }>`
   color: ${(props) => props.theme.colors.white};
-  background-color: ${(props) => props.isActive ? props.theme.colors.roseBrownDark : props.theme.colors.roseBrownMedium};
+  background-color: ${(props) =>
+    props.isActive ? props.theme.colors.roseBrownDark : props.theme.colors.roseBrownMedium};
   padding: ${(props) => props.theme.spacing(3)} ${(props) => props.theme.spacing(4)};
   border: none;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 300;
-  pointer-events: ${(props) => props.isActive ? 'none' : 'all'};
+  pointer-events: ${(props) => (props.isActive ? 'none' : 'all')};
 
   &:hover {
     background-color: ${(props) => props.theme.colors.roseBrownDark};

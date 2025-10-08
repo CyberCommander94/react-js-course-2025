@@ -8,34 +8,34 @@ export const ItemsCounter: FC = () => {
     const newCount = count + 1;
 
     if (newCount > 5) {
-      return
+      return;
     }
 
     setCount(newCount);
-  }
+  };
 
   const handleMinus = () => {
     const newCount = count - 1;
 
     if (newCount < 0) {
-      return
+      return;
     }
 
     setCount(newCount);
-  }
+  };
 
   return (
     <CounterWrapper>
       <ButtonElement onClick={handleMinus} isDisabled={count - 1 < 0}>
         <div>-</div>
       </ButtonElement>
-      <CountText>{ count }</CountText>
+      <CountText>{count}</CountText>
       <ButtonElement onClick={handleAdd} isDisabled={count + 1 > 5}>
         <div>+</div>
       </ButtonElement>
     </CounterWrapper>
   );
-}
+};
 
 const CounterWrapper = styled.div`
   display: flex;
@@ -54,11 +54,11 @@ const ButtonElement = styled.button<{ isDisabled: boolean }>`
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  opacity: ${(props) => props.isDisabled ? '0.5' : '1'};
+  opacity: ${(props) => (props.isDisabled ? '0.5' : '1')};
   font-weight: 300;
   font-size: 2rem;
   line-height: 1;
-  pointer-events: ${(props) => props.isDisabled ? 'none' : 'all'};
+  pointer-events: ${(props) => (props.isDisabled ? 'none' : 'all')};
   user-select: none;
 
   &:hover {
@@ -69,7 +69,6 @@ const ButtonElement = styled.button<{ isDisabled: boolean }>`
     outline: none;
   }
 `;
-
 
 const CountText = styled.p`
   font-weight: 600;

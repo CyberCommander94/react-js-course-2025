@@ -2,19 +2,17 @@ import { AppFooter } from '@/components/app-footer';
 import { AppHeader } from '@/components/app-header';
 import styled from '@emotion/styled';
 
-import type { FC, PropsWithChildren } from "react";
+import type { FC, PropsWithChildren } from 'react';
 
-export const AppLayout: FC<PropsWithChildren> = ({children}) => {
+export const AppLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <LayoutContainer>
       <AppHeader />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <AppFooter />
     </LayoutContainer>
   );
-}
+};
 
 const LayoutContainer = styled.div`
   width: 100%;

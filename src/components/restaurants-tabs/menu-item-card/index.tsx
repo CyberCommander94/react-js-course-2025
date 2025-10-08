@@ -1,7 +1,7 @@
 import type { IMenuItem } from '@/types';
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import { Check } from 'lucide-react'; // можно использовать иконку для буллета
+import { Check } from 'lucide-react';
 import { ItemsCounter } from '../items-counter';
 
 type Props = {
