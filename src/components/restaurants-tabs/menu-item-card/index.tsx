@@ -18,7 +18,7 @@ export const MenuItemCard: FC<Props> = ({ menuItem }) => {
         </CardTitleWrapper>
         <ItemsCounter />
       </CardHeader>
-      <IngredientsListTitle>Состав блюда:</IngredientsListTitle>
+      <IngredientsListTitle>Ingredients:</IngredientsListTitle>
       <IngredientsList>
         {menuItem.ingredients.map((ingredient, index) => (
           <IngredientItem key={index}>

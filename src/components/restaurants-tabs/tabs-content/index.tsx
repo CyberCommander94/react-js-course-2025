@@ -13,7 +13,7 @@ export const TabsContent: FC<Props> = ({ restaurant }) => {
   return (
     <div>
       <RestaurantName>{restaurant.name}</RestaurantName>
-      <SectionTitle>Меню</SectionTitle>
+      <SectionTitle>Menu</SectionTitle>
       {restaurant?.menu?.length ? (
         <RestaurantDataGrid>
           {restaurant.menu.map((menuItem) => (
@@ -21,9 +21,9 @@ export const TabsContent: FC<Props> = ({ restaurant }) => {
           ))}
         </RestaurantDataGrid>
       ) : (
-        <NoContentMessage>Список блюд в меню пуст</NoContentMessage>
+        <NoContentMessage>Menu is empty</NoContentMessage>
       )}
-      <SectionTitle>Отзывы</SectionTitle>
+      <SectionTitle>Reiews</SectionTitle>
       {restaurant?.reviews?.length ? (
         <RestaurantDataGrid>
           {restaurant.reviews.map((review) => (
@@ -31,7 +31,7 @@ export const TabsContent: FC<Props> = ({ restaurant }) => {
           ))}
         </RestaurantDataGrid>
       ) : (
-        <NoContentMessage>Список отзывов пуст</NoContentMessage>
+        <NoContentMessage>No reviews</NoContentMessage>
       )}
     </div>
   );
