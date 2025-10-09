@@ -1,8 +1,8 @@
 import type { IRestaurant } from '@/types';
 import type { FC } from 'react';
-import { RestaurantDataGrid } from '../restaurant-data-grid';
-import { MenuItemCard } from '@/components/restaurants-tabs/menu-item-card';
-import { ReviewCard } from '@/components/restaurants-tabs/review-card';
+import { RestaurantDataGrid } from '../../restaurant-data-grid';
+import { MenuItemCard } from '@/components/pages/home/menu-item-card';
+import { ReviewCard } from '@/components/pages/home/review-card';
 import styled from '@emotion/styled';
 
 type Props = {

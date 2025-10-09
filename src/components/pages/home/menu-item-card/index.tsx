@@ -2,7 +2,7 @@ import type { IMenuItem } from '@/types';
 import type { FC } from 'react';
 import styled from '@emotion/styled';
 import { Check } from 'lucide-react';
-import { ItemsCounter } from '../items-counter';
+import { ItemsCounter } from '@/components/pages/home/menu-item-card/items-counter';
 
 type Props = {
   menuItem: IMenuItem;

@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import { restaurants } from '@/db/index';
-import { RestaurantsTabs } from '@/components/restaurants-tabs';
+import { RestaurantsTabsGroup } from '@/components/pages/home/restaurants-tabs-group';
 import type { FC } from 'react';
 
 export const HomePage: FC = () => {
   return (
     <PageContainer>
       <PageContent>
-        <RestaurantsTabs restaurants={restaurants} />
+        <RestaurantsTabsGroup restaurants={restaurants} />
       </PageContent>
     </PageContainer>
   );

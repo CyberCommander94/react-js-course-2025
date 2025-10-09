@@ -1,7 +1,7 @@
 import type { IReviewsItem } from '@/types';
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import { RatingStars } from '../rating-stars';
+import { RatingStars } from '@/components/pages/home/review-card/rating-stars';
 
 type Props = {
   review: IReviewsItem;

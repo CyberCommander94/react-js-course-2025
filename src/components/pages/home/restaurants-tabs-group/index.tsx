@@ -1,8 +1,8 @@
 import { useState, type FC } from 'react';
 import styled from '@emotion/styled';
-import { TabsContent } from '@/components/restaurants-tabs/tabs-content';
+import { TabsContent } from '@/components/pages/home/restaurants-tabs-group/tabs-content';
 import type { IRestaurant } from '@/types';
-import { TabButton } from '@/components/restaurants-tabs/tab-button';
+import { TabButton } from '@/components/pages/home/restaurants-tabs-group/tab-button';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation } from 'swiper/modules';
 
@@ -10,7 +10,7 @@ type Props = {
   restaurants: IRestaurant[];
 };
 
-export const RestaurantsTabs: FC<Props> = ({ restaurants }) => {
+export const RestaurantsTabsGroup: FC<Props> = ({ restaurants }) => {
   const [currentRestaurant, setCurrentRestaurant] = useState<IRestaurant | null>(
     restaurants?.[0] ?? null,
   );
