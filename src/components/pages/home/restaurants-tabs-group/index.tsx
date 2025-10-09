@@ -11,12 +11,10 @@ type Props = {
 };
 
 export const RestaurantsTabsGroup: FC<Props> = ({ restaurants }) => {
-  const [currentRestaurant, setCurrentRestaurant] = useState<IRestaurant | null>(
-    restaurants?.[0] ?? null,
-  );
+  const [currentRestaurant, setCurrentRestaurant] = useState<IRestaurant>(restaurants?.[0] ?? null);
 
   const getActiveRestaurant = (id: string): IRestaurant | undefined => {
-    return restaurants.find((restaurant) => restaurant.id == id);
+    return restaurants.find((restaurant) => restaurant.id === id);
   };
 
   const handleTabButtonClick = (id: string) => {
@@ -31,36 +29,34 @@ export const RestaurantsTabsGroup: FC<Props> = ({ restaurants }) => {
 
   return (
     <>
-      {currentRestaurant && (
-        <RestaursntsTabsContainer>
-          <SwiperWrapper>
-            <NavButton className="swiper-button-prev" />
-            <SwiperElement
-              modules={[FreeMode, Navigation]}
-              navigation={{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              }}
-              freeMode
-              spaceBetween={4}
-              slidesPerView="auto"
-              style={{ width: '100%' }}
-            >
-              {restaurants?.map((restaurant) => (
-                <SwiperSlide key={restaurant.id}>
-                  <TabButton
-                    restaurant={restaurant}
-                    isActive={currentRestaurant.id === restaurant.id}
-                    onClick={handleTabButtonClick}
-                  />
-                </SwiperSlide>
-              ))}
-            </SwiperElement>
-            <NavButton className="swiper-button-next" />
-          </SwiperWrapper>
-          <TabsContent restaurant={currentRestaurant} key={currentRestaurant.id} />
-        </RestaursntsTabsContainer>
-      )}
+      <RestaursntsTabsContainer>
+        <SwiperWrapper>
+          <NavButton className="swiper-button-prev" />
+          <SwiperElement
+            modules={[FreeMode, Navigation]}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
+            freeMode
+            spaceBetween={4}
+            slidesPerView="auto"
+            style={{ width: '100%' }}
+          >
+            {restaurants?.map((restaurant) => (
+              <SwiperSlide key={restaurant.id}>
+                <TabButton
+                  restaurant={restaurant}
+                  isActive={currentRestaurant.id === restaurant.id}
+                  onClick={handleTabButtonClick}
+                />
+              </SwiperSlide>
+            ))}
+          </SwiperElement>
+          <NavButton className="swiper-button-next" />
+        </SwiperWrapper>
+        <TabsContent restaurant={currentRestaurant} key={currentRestaurant.id} />
+      </RestaursntsTabsContainer>
     </>
   );
 };
