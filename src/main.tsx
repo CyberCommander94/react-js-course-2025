@@ -1,23 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-// import { RouterProvider } from "react-router-dom";
-// import { router } from "@/routes";
-import { restaurants } from '@/db';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ThemeProvider } from '@emotion/react';
+import { theme } from '@/constants/theme';
+import 'swiper/css';
 
-import 'normalize.css';
-import '@/assets/styles/fonts.scss';
-import '@/assets/styles/main.scss'
-
-import ItemsGrid from '@/components/restaurants/items-grid';
-
-// createRoot(document.getElementById('root')!).render(
-//   <StrictMode>
-//     <RouterProvider router={router} />
-//   </StrictMode>
-// )
+import { App } from './App';
+import { GlobalStyles } from './components/global-styles';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ItemsGrid items={restaurants} />
-  </StrictMode>
-)
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <App />
+    </ThemeProvider>
+  </StrictMode>,
+);

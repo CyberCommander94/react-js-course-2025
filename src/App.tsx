@@ -1,22 +1,11 @@
-import { Outlet } from "react-router-dom";
-import styled from '@emotion/styled';
+import type { FC } from 'react';
+import { AppLayout } from './components/layouts/app';
+import { HomePage } from './pages/home-page';
 
-export default function App() {
+export const App: FC = () => {
   return (
-    <AppWrapper>
-      <PagesContainer>
-        <Outlet />
-      </PagesContainer>
-    </AppWrapper>
+    <AppLayout>
+      <HomePage />
+    </AppLayout>
   );
-}
-
-const AppWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-`;
-
-const PagesContainer = styled.main`
-  width: 100%;
-  height: 100%;
-`;
+};
