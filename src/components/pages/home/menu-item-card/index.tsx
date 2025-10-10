@@ -1,14 +1,16 @@
 import type { IMenuItem } from '@/types';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import styled from '@emotion/styled';
-import { Check } from 'lucide-react';
-import { ItemsCounter } from '@/components/pages/home/menu-item-card/items-counter';
+import { Counter } from '@/components/pages/home/counter';
+import { Circle } from 'lucide-react';
 
 type Props = {
   menuItem: IMenuItem;
 };
 
 export const MenuItemCard: FC<Props> = ({ menuItem }) => {
+  const [count, setCount] = useState(0);
+
   return (
     <CardWrapper>
       <CardHeader>
@@ -16,30 +18,31 @@ export const MenuItemCard: FC<Props> = ({ menuItem }) => {
           <CardTitle>{menuItem.name}</CardTitle>
           <CardPrice>€{menuItem.price}</CardPrice>
         </CardTitleWrapper>
-        <ItemsCounter />
+        <Counter value={count} step={1} minValue={0} maxValue={5} onValueChange={setCount} />
       </CardHeader>
       <IngredientsListTitle>Ingredients:</IngredientsListTitle>
       <IngredientsList>
         {menuItem.ingredients.map((ingredient, index) => (
           <IngredientItem key={index}>
-            <CheckIcon />
+            <CircleIcon />
             {ingredient}
           </IngredientItem>
         ))}
       </IngredientsList>
+      <BottomBorder />
     </CardWrapper>
   );
 };
 
 const CardWrapper = styled.div`
   width: 100%;
-  border-left: 4px solid ${(props) => props.theme.colors.roseBrownMedium};
-  border-right: 4px solid ${(props) => props.theme.colors.roseBrownMedium};
-  border-bottom: 1px solid ${(props) => props.theme.colors.roseBrownMedium};
+  border-left: 4px solid ${(props) => props.theme.colors.goldenBrownDeep};
+  border-right: 4px solid ${(props) => props.theme.colors.goldenBrownMedium};
   padding: ${(props) => props.theme.spacing(4)};
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacing(2)};
+  position: relative;
 `;
 
 const CardHeader = styled.div`
@@ -66,7 +69,7 @@ const CardTitle = styled.p`
 const CardPrice = styled.p`
   font-weight: 700;
   font-size: 1.2rem;
-  color: ${(props) => props.theme.colors.warmBeigeMedium};
+  color: ${(props) => props.theme.colors.goldenBrownMedium};
   margin: 0;
 `;
 
@@ -78,10 +81,11 @@ const IngredientsListTitle = styled.p`
 const IngredientsList = styled.ul`
   list-style: none;
   padding: 0;
+  width: 100%;
   margin: ${(props) => props.theme.spacing(1)} 0 0 0;
   display: flex;
-  flex-direction: column;
   gap: ${(props) => props.theme.spacing(1)};
+  align-items: center;
 `;
 
 const IngredientItem = styled.li`
@@ -89,12 +93,28 @@ const IngredientItem = styled.li`
   align-items: center;
   gap: ${(props) => props.theme.spacing(1)};
   padding: ${(props) => props.theme.spacing(1)} ${(props) => props.theme.spacing(2)};
-  font-size: 0.95rem;
-  color: ${(props) => props.theme.colors.roseBrownDark};
 `;
 
-const CheckIcon = styled(Check)`
-  width: 16px;
-  height: 16px;
-  color: ${(props) => props.theme.colors.roseBrownDark};
+const CircleIcon = styled(Circle)`
+  width: 5px;
+  height: 5px;
+  margin-top: 1px;
+  fill: ${(props) => props.theme.colors.goldenBrownMedium};
+  color: ${(props) => props.theme.colors.goldenBrownMedium};
+`;
+
+const BottomBorder = styled.hr`
+  height: 1px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(
+    to right,
+    ${(props) => props.theme.colors.goldenBrownDeep},
+    ${(props) => props.theme.colors.roseBrownDark},
+    ${(props) => props.theme.colors.goldenBrownMedium}
+  );
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
 `;

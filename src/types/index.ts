@@ -8,7 +8,7 @@ export interface IRestaurant {
 export interface IMenuItem {
   id: string;
   name: string;
-  price: string | number;
+  price: number;
   ingredients: string[];
 }
 
@@ -16,5 +16,5 @@ export interface IReviewsItem {
   id: string;
   user: string;
   text: string;
-  rating: string | number;
+  rating: number;
 }
