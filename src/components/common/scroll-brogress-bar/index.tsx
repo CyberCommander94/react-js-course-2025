@@ -58,6 +58,6 @@ const ProgressBar = styled.div`
     ${(props) => props.theme.colors.roseBrownDark},
     ${(props) => props.theme.colors.goldenBrownMedium}
   );
-  z-index: 9999;
+  z-index: 100;
   transition: width 0.25s ease-out;
 `;

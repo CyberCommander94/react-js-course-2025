@@ -18,7 +18,6 @@ export const CommonButton: FC<PropsWithChildren<Props>> = ({
   onClick,
 }) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (isDisabled) return;
     onClick(event);
   };
 
