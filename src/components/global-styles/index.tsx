@@ -31,11 +31,7 @@ export const GlobalStyles = () => {
           width: 100%;
           height: 100%;
           z-index: -1;
-          background: linear-gradient(
-            to bottom right,
-            ${theme.colors.roseBrownLightest},
-            ${theme.colors.coolGrayLightest}
-          );
+          background: ${theme.colors.coolGrayLightest};
           background-repeat: no-repeat;
           background-size: cover;
         }

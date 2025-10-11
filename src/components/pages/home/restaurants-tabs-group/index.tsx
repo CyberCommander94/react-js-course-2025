@@ -2,9 +2,9 @@ import { useState, type FC } from 'react';
 import styled from '@emotion/styled';
 import { TabsContent } from '@/components/pages/home/restaurants-tabs-group/tabs-content';
 import type { IRestaurant } from '@/types';
-import { TabButton } from '@/components/pages/home/restaurants-tabs-group/tab-button';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation } from 'swiper/modules';
+import { CommonButton } from '@/components/common/button';
 
 type Props = {
   restaurants: IRestaurant[];
@@ -45,11 +45,12 @@ export const RestaurantsTabsGroup: FC<Props> = ({ restaurants }) => {
           >
             {restaurants?.map((restaurant) => (
               <SwiperSlide key={restaurant.id}>
-                <TabButton
-                  restaurant={restaurant}
+                <CommonButton
+                  onClick={() => handleTabButtonClick(restaurant.id)}
                   isActive={currentRestaurant.id === restaurant.id}
-                  onClick={handleTabButtonClick}
-                />
+                >
+                  {restaurant.name}
+                </CommonButton>
               </SwiperSlide>
             ))}
           </SwiperElement>
@@ -71,7 +72,7 @@ const RestaursntsTabsContainer = styled.div`
 const SwiperWrapper = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 40px 1fr 40px;
+  grid-template-columns: 32px 1fr 32px;
   grid-template-rows: 1fr;
   gap: ${(props) => props.theme.spacing(3)};
   align-items: center;
@@ -90,8 +91,8 @@ const NavButton = styled.button`
   border: none;
   cursor: pointer !important;
   font-size: 24px;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
